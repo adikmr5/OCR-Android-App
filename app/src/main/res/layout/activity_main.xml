@@ -25,15 +25,20 @@
         android:text="Press to capture Image"
         android:id="@+id/camera_btn"
         android:layout_marginBottom="40dp"
+        android:background="#15ee00"
+        android:textColor="#FFFFFF"
         ></Button>
+
     <Button
+        android:id="@+id/continue_btn"
+        android:textColor="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/camera_btn"
         android:layout_marginBottom="10dp"
-        android:text="Continue"
-        android:id="@+id/continue_btn"
+        android:background="#eed900"
 
-        ></Button>
+
+        android:text="Continue"></Button>
 
 </RelativeLayout>
