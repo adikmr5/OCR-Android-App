@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "719419381891",
+    "firebase_url": "https://search-tour-doubts.firebaseio.com",
+    "project_id": "search-tour-doubts",
+    "storage_bucket": "search-tour-doubts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719419381891:android:35743d1be4ecc00798e3b6",
+        "android_client_info": {
+          "package_name": "com.example.android.searchyourdoubts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719419381891-orupd207unljvqd531esspam53pmf51g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.searchyourdoubts",
+            "certificate_hash": "8019eb170b3fb2257854970726708424a5f4a1a8"
+          }
+        },
+        {
+          "client_id": "719419381891-0d041sfdjqasdikostbp6dn9mo97vf4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbEl4iin3yf5H5AiTScv-v-t5SIwzJZ6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719419381891-0d041sfdjqasdikostbp6dn9mo97vf4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
