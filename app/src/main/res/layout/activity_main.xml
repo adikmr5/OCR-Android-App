@@ -19,7 +19,7 @@
         android:id="@+id/test_output"
         ></TextView>
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="Press to capture Image"
@@ -27,12 +27,16 @@
         android:layout_marginBottom="40dp"
         android:background="#15ee00"
         android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+
         ></Button>
 
     <Button
         android:id="@+id/continue_btn"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_above="@id/camera_btn"
         android:layout_marginBottom="10dp"

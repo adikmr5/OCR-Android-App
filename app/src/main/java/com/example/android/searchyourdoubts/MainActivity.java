@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     Bitmap imageBitmap2;
     Uri uri,pass;
+    private String text;
+    StringBuilder stringBuilder=new StringBuilder();
 
 
     @Override
@@ -56,14 +58,14 @@ public class MainActivity extends AppCompatActivity {
                 CropImage.startPickImageActivity(MainActivity.this);
 
 
+
             }
         });
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"here",Toast.LENGTH_SHORT);
-
                 showOutput();
+
             }
         });
     }
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.i("he", "fail");
-                Toast.makeText(MainActivity.this,"error",Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this,"error",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -114,18 +116,25 @@ public class MainActivity extends AppCompatActivity {
     private void displayText(FirebaseVisionText firebaseVisionText) {
         List<FirebaseVisionText.TextBlock> blockList=firebaseVisionText.getTextBlocks();
         if(blockList.size()==0){
-            Toast.makeText(this,"No Text Found",Toast.LENGTH_SHORT);
+            Toast.makeText(this,"No Text Found",Toast.LENGTH_SHORT).show();
         }
         else{
+
             for (FirebaseVisionText.TextBlock block:firebaseVisionText.getTextBlocks()){
-                String text=block.getText();
-                textView.setText(text);
+                text=block.getText();
+                stringBuilder.append(text);
+
+                //textView.setText(text);
             }
+            Intent intent = new Intent(MainActivity.this, Output.class);
+            intent.putExtra("Detect",stringBuilder.toString());
+            MainActivity.this.startActivity(intent);
+
         }
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Toast.makeText(this,""+requestCode+"  "+resultCode,Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,""+requestCode+"  "+resultCode,Toast.LENGTH_SHORT).show();
         if (requestCode == 200 && resultCode== Activity.RESULT_OK) {
             Uri imageuri=CropImage.getPickImageResultUri(this,data);
             imageView.setImageURI(imageuri);
@@ -143,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode==RESULT_OK){
                 imageView.setImageURI(result.getUri());
                 pass=result.getUri();
+                continueBtn.setVisibility(View.VISIBLE);
+                imageBtn.setText("Select Another");
 
             }
         }
